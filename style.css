@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "Equinor";
+  src: url("fonts/Equinor-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { width: 100%; min-height: 100%; margin: 0; }
+body { background: #000; color: #d1001b; font-family: "Equinor", Arial, sans-serif; }
+.page {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 3rem 1.5rem;
+}
+.identity {
+  width: 100%;
+  text-align: center;
+  transform: translateY(-2vh);
+}
+.brand { display: flex; flex-direction: column; align-items: center; }
+.symbol {
+  display: block;
+  width: clamp(108px, 12vw, 242px);
+  height: auto;
+  margin-bottom: clamp(18px, 2vw, 36px);
+}
+h1 {
+  margin: 0;
+  color: #d1001b;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 6.375rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.status {
+  margin: clamp(35px, 3.7vw, 76px) 0 0;
+  color: #d5d5d5;
+  font-size: clamp(1.45rem, 2.35vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+@media (max-width: 700px) {
+  .page { padding: 2.5rem 1.25rem; }
+  .identity { transform: translateY(-1vh); }
+  .symbol { width: clamp(120px, 30vw, 170px); margin-bottom: 26px; }
+  h1 { font-size: clamp(2rem, 7.5vw, 3.5rem); max-width: 11em; }
+  .status { margin-top: 44px; font-size: clamp(1.4rem, 5vw, 2rem); }
+}
+@media (max-height: 460px) and (orientation: landscape) {
+  .page { padding-block: 1.5rem; }
+  .identity { transform: none; }
+  .symbol { width: 78px; margin-bottom: 12px; }
+  h1 { font-size: clamp(1.65rem, 5vw, 3rem); }
+  .status { margin-top: 18px; font-size: 1.3rem; }
+}
